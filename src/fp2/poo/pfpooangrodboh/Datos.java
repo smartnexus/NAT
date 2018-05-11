@@ -29,4 +29,12 @@ public class Datos implements DatosInterfaz {
     public void setDatos(String datos) {
         this.datos = datos;
     }
+
+    /**
+     * Metodo que devuelve los datos en un objeto String.
+     */
+    @Override
+    public String toString() {
+        return datos;
+    }
 }

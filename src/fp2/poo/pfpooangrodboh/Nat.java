@@ -56,7 +56,7 @@ public class Nat implements NatInterfaz {
     public void muestraPaquete(PaqueteInterfaz paquete) {
         System.out.println(paquete.getIstOrigen().toString());
         System.out.println(paquete.getIstDestino().toString());
-        System.out.println(paquete.getDatos().getDatos());
+        System.out.println(paquete.getDatos().toString());
     }
 
     /**
