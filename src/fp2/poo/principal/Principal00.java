@@ -63,7 +63,6 @@ public class Principal00 {
             }			
             lectura.terminaLectura();
         } catch (OperacionNoPermitidaExcepcion e) {
-            e.printStackTrace();
             System.err.println("Operacion no permitida.");
         }
     }

@@ -43,7 +43,7 @@ public class Nat implements NatInterfaz {
     public void muestraRegistros() {
         for(IstInterfaz org : tablaTraduccion.keySet()) {
             IstInterfaz dest = tablaTraduccion.get(org);
-            System.out.println(org.toString() + " - " + dest.toString() + ".");
+            System.out.println(org + " - " + dest + ".");
         }
     }
 
@@ -54,9 +54,9 @@ public class Nat implements NatInterfaz {
      */
     @Override
     public void muestraPaquete(PaqueteInterfaz paquete) {
-        System.out.println(paquete.getIstOrigen().toString());
-        System.out.println(paquete.getIstDestino().toString());
-        System.out.println(paquete.getDatos().toString());
+        System.out.println(paquete.getIstOrigen());
+        System.out.println(paquete.getIstDestino());
+        System.out.println(paquete.getDatos());
     }
 
     /**
@@ -92,10 +92,12 @@ public class Nat implements NatInterfaz {
         } else {
             // A partir de aquí ya tratamos esta transferencia desde el ámbito público al privado.
             // Para empezar busco si la dirección de destino existe en mi tabla de traducción.
+
             boolean exception = true;
             for (Map.Entry<IstInterfaz, IstInterfaz> entry : tablaTraduccion.entrySet()) { // Para todas las entradas de la tabla.
                 if (paquete.getIstDestino().getDireccion().equals(entry.getValue().getDireccion())  // Compruebo si alguna coincide con el Ist Destino
                     && paquete.getIstDestino().getPuerto().getPuerto() == (entry.getValue().getPuerto().getPuerto())) {
+
                     paquete.setIstDestino(entry.getKey()); // Si coincide la establezco como nuevo destino.
                     exception = false;
                 }

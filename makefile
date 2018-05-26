@@ -49,9 +49,31 @@ interfaces: excepciones \
 ./bin/fp2/poo/utilidades/NatInterfaz.class \
 ./bin/fp2/poo/utilidades/IstInterfaz.class
 
-ejecuta: ./bin/fp2/poo/principal/Principal00.class	
+ejecuta: ./bin/fp2/poo/principal/Principal00.class
+
 	java -classpath ./bin:./jar -cp bin fp2.poo.principal.Principal00 prueba00 1.1.1.4
 
+
+#####################################
+# Principal00.jar
+#####################################
+
+compila: ./bin/fp2/poo/principal/Principal00.class \
+                        ./bin/fp2/poo/utilidades/Excepciones/OperacionNoPermitidaExcepcion.class \
+                       ./bin/fp2/poo/utilidades/Excepciones/PuertoIncorrectoExcepcion.class \
+                       ./bin/fp2/poo/utilidades/DatosInterfaz.class \
+                       ./bin/fp2/poo/utilidades/PuertoInterfaz.class \
+                       ./bin/fp2/poo/utilidades/PaqueteInterfaz.class \
+                       ./bin/fp2/poo/utilidades/NatInterfaz.class \
+                       ./bin/fp2/poo/utilidades/IstInterfaz.class \
+                       ./bin/fp2/poo/utilidades/LecturaFicheroEntrada.class \
+                       ./bin/fp2/poo/pfpooangrodboh/Ist.class               \
+                       ./bin/fp2/poo/pfpooangrodboh/Nat.class                \
+                       ./bin/fp2/poo/pfpooangrodboh/Paquete.class            \
+                       ./bin/fp2/poo/pfpooangrodboh/Puerto.class              \
+                       ./bin/fp2/poo/pfpooangrodboh/Datos.class
+
+	jar cvfe ./jar/Principal00.jar fp2.poo.principal.Principal00
 
 #####################################
 # Principal00.java
